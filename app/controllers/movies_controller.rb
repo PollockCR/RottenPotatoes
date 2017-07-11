@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @movies = Movie.order(params[:sort])
+    @movies = Movie.order(sort_column)
   end
 
   def new
@@ -40,6 +40,12 @@ class MoviesController < ApplicationController
     @movie.destroy
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
+  end
+  
+  private
+  
+  def sort_column
+    params[:sort]
   end
 
 end
