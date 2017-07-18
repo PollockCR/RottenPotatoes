@@ -59,7 +59,7 @@ form label {
   font-weight: bold;
   color: maroon;
 }
-table#movies .hilite {
+#movies th .hilite {
   display: flex;
   background-color: yellow;
 }
