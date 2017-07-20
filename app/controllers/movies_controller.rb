@@ -13,6 +13,9 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.order(sort_column)
     @all_ratings = Movie.collect_ratings
+    if params[:ratings]
+      @selected_ratings = params[:ratings]
+    end
   end
 
   def new
